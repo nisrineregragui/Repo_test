@@ -9,6 +9,7 @@ import { useTheme } from '@mui/material/styles';
 import { _workspaces } from 'src/_mock';
 
 import { Main } from './main'; // Re-trigger resolution
+import { Header } from './header';
 import { NavMobile, NavDesktop } from './nav';
 import { navData } from '../nav-config-dashboard';
 
@@ -51,7 +52,10 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
                 workspaces={_workspaces}
             />
 
-            <Main>{children}</Main>
+            <Box sx={{ display: 'flex', flex: '1 1 auto', flexDirection: 'column' }}>
+                <Header onOpenNav={() => setNavOpen(true)} />
+                <Main>{children}</Main>
+            </Box>
         </Box>
     );
 }
