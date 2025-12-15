@@ -9,3 +9,20 @@ export interface Client {
     ville?: string;
     nomMagasinPartenaire?: string;
 }
+
+export interface UserDto {
+    NomUtilisateur: string;
+    MotDePasse: string;
+    Role: string;
+}
+
+export interface UserLoginDto {
+    NomUtilisateur: string;
+    MotDePasse: string;
+}
+
+export interface UserResponseDto {
+    UtilisateurID: string;
+    NomUtilisateur: string;
+    Role: string;
+}

@@ -1,13 +1,11 @@
 
-import { useTheme } from '@mui/material/styles';
-import Box, { BoxProps } from '@mui/material/Box';
+import Box, { type BoxProps } from '@mui/material/Box';
 
 import { layoutClasses } from '../core/classes';
 
 // ----------------------------------------------------------------------
 
 export function Main({ children, sx, ...other }: BoxProps) {
-    const theme = useTheme();
 
     return (
         <Box

@@ -3,8 +3,6 @@ import type { Theme, SxProps, Breakpoint } from '@mui/material/styles';
 import { useState } from 'react';
 
 import Box from '@mui/material/Box';
-import Alert from '@mui/material/Alert';
-import { useTheme } from '@mui/material/styles';
 
 import { _workspaces } from 'src/_mock';
 
@@ -24,8 +22,6 @@ export type DashboardLayoutProps = {
 };
 
 export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) {
-    const theme = useTheme();
-
     const [navOpen, setNavOpen] = useState(false);
 
     const layoutQuery: Breakpoint = 'lg';

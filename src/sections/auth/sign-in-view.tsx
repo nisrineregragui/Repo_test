@@ -13,16 +13,30 @@ import { useRouter } from 'src/routes/hooks';
 
 import { Iconify } from 'src/components/iconify';
 
+import { useAuth } from 'src/auth/context/auth-context';
+
 // ----------------------------------------------------------------------
 
 export function SignInView() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const { login } = useAuth();
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSignIn = useCallback(() => {
-    router.push('/');
-  }, [router]);
+  const handleSignIn = useCallback(async () => {
+    try {
+      await login({ NomUtilisateur: email, MotDePasse: password });
+      router.push('/');
+
+    } catch (error: any) {
+      console.error(error);
+      setErrorMsg(error.response?.data || 'Something went wrong');
+    }
+  }, [email, password, login, router]);
 
   const renderForm = (
     <Box
@@ -32,11 +46,14 @@ export function SignInView() {
         flexDirection: 'column',
       }}
     >
+      {!!errorMsg && <Typography color="error" sx={{ mb: 2 }}>{errorMsg}</Typography>}
       <TextField
         fullWidth
-        name="email"
-        label="Email address"
-        defaultValue="hello@gmail.com"
+        name="username"
+        label="Username"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Username"
         sx={{ mb: 3 }}
         slotProps={{
           inputLabel: { shrink: true },
@@ -51,7 +68,9 @@ export function SignInView() {
         fullWidth
         name="password"
         label="Password"
-        defaultValue="@demo1234"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
         type={showPassword ? 'text' : 'password'}
         slotProps={{
           inputLabel: { shrink: true },

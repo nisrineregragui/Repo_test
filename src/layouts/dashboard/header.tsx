@@ -1,6 +1,4 @@
-import { IconButton, Stack, useTheme } from '@mui/material';
-
-import { Iconify } from 'src/components/iconify';
+import { Stack, useTheme } from '@mui/material';
 
 import { Searchbar } from '../components/searchbar';
 import { MenuButton } from '../components/menu-button';

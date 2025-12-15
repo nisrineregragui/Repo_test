@@ -2,7 +2,7 @@ import type { Client } from 'src/types/client';
 import type { SelectChangeEvent } from '@mui/material/Select';
 
 import { debounce } from 'es-toolkit';
-import { useState, useCallback, useEffect } from 'react';
+import { useMemo, useState, useEffect, useCallback } from 'react';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -51,8 +51,8 @@ export function ClientView() {
     );
 
     // Debounced fetch function
-    const debouncedFetchData = useCallback(
-        debounce((query: string, type: string) => {
+    const debouncedFetchData = useMemo(
+        () => debounce((query: string, type: string) => {
             fetchData(query, type);
         }, 500),
         [fetchData]

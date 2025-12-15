@@ -16,6 +16,8 @@ import { useRouter, usePathname } from 'src/routes/hooks';
 
 import { _myAccount } from 'src/_mock';
 
+import { useAuth } from 'src/auth/context/auth-context';
+
 // ----------------------------------------------------------------------
 
 export type AccountPopoverProps = IconButtonProps & {
@@ -31,6 +33,8 @@ export function AccountPopover({ data = [], sx, ...other }: AccountPopoverProps)
   const router = useRouter();
 
   const pathname = usePathname();
+
+  const { logout } = useAuth();
 
   const [openPopover, setOpenPopover] = useState<HTMLButtonElement | null>(null);
 
@@ -129,7 +133,11 @@ export function AccountPopover({ data = [], sx, ...other }: AccountPopoverProps)
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         <Box sx={{ p: 1 }}>
-          <Button fullWidth color="error" size="medium" variant="text">
+          <Button fullWidth color="error" size="medium" variant="text" onClick={() => {
+            handleClosePopover();
+            logout();
+            router.push('/sign-in'); // Or let AuthGuard handle it by state change
+          }}>
             Logout
           </Button>
         </Box>

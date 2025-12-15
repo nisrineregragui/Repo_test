@@ -1,0 +1,72 @@
+﻿
+> @minimal/material-kit-react@3.0.0 lint
+> eslint "src/**/*.{js,jsx,ts,tsx}"
+
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\app.tsx
+  10:1  error  Missed spacing between "src/theme/theme-provider" and "src/auth/context/auth-provider"                               perfectionist/sort-imports
+  12:1  error  Expected "src/components/iconify" (custom-components) to come before "src/auth/context/auth-provider" (custom-auth)  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\auth\context\auth-context.tsx
+  1:25  warning  Expected "useContext" to come before "createContext"                      perfectionist/sort-named-imports
+  2:1   warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+  2:1   error    Missed spacing between "react" and "src/types/client"                     perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\auth\context\auth-provider.tsx
+  1:33  warning  Expected "useEffect" to come before "useCallback"                          perfectionist/sort-named-imports
+  1:44  warning  Expected "useMemo" to come before "useEffect"                              perfectionist/sort-named-imports
+  3:24  warning  Expected "setSession" to come before "isValidToken"                        perfectionist/sort-named-imports
+  4:1   warning  All imports in the declaration are only used as types. Use `import type`   @typescript-eslint/consistent-type-imports
+  4:1   error    Missed spacing between "src/services/auth-service" and "src/types/client"  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\auth\guard\auth-guard.tsx
+  1:10  warning  'useState' is defined but never used                                     @typescript-eslint/no-unused-vars
+  1:10  warning  'useState' is defined but never used                                     unused-imports/no-unused-imports
+  2:1   error    Missed spacing between "react" and "src/routes/hooks"                    perfectionist/sort-imports
+  3:1   error    Missed spacing between "src/routes/hooks" and "../context/auth-context"  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\layouts\components\account-popover.tsx
+  16:1  error  Missed spacing between "src/routes/hooks" and "src/auth/context/auth-context"                 perfectionist/sort-imports
+  18:1  error  Expected "src/_mock" (internal) to come before "src/auth/context/auth-context" (custom-auth)  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\layouts\components\nav-upgrade.tsx
+  2:8  warning  'Button' is defined but never used      @typescript-eslint/no-unused-vars
+  2:8  warning  'Button' is defined but never used      unused-imports/no-unused-imports
+  3:8  warning  'Typography' is defined but never used  @typescript-eslint/no-unused-vars
+  3:8  warning  'Typography' is defined but never used  unused-imports/no-unused-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\layouts\dashboard\header.tsx
+  1:10  warning  'IconButton' is defined but never used        @typescript-eslint/no-unused-vars
+  1:10  warning  'IconButton' is defined but never used        unused-imports/no-unused-imports
+  1:22  warning  Expected "Stack" to come before "IconButton"  perfectionist/sort-named-imports
+  3:10  warning  'Iconify' is defined but never used           @typescript-eslint/no-unused-vars
+  3:10  warning  'Iconify' is defined but never used           unused-imports/no-unused-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\layouts\dashboard\layout.tsx
+   6:8   warning  'Alert' is defined but never used           @typescript-eslint/no-unused-vars
+   6:8   warning  'Alert' is defined but never used           unused-imports/no-unused-imports
+  27:11  warning  'theme' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\layouts\dashboard\main.tsx
+   3:1   warning  Imports "BoxProps" are only used as type    @typescript-eslint/consistent-type-imports
+  10:11  warning  'theme' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\routes\sections.tsx
+  11:1  error  Missed spacing between "src/layouts/auth" and "src/auth/guard/auth-guard"                             perfectionist/sort-imports
+  12:1  error  Expected "src/layouts/dashboard" (internal) to come before "src/auth/guard/auth-guard" (custom-auth)  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\sections\auth\sign-in-view.tsx
+  13:1  error    Missed spacing between "src/routes/hooks" and "src/auth/context/auth-context"                                       perfectionist/sort-imports
+  15:1  error    Expected "src/components/iconify" (custom-components) to come before "src/auth/context/auth-context" (custom-auth)  perfectionist/sort-imports
+  33:7  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any')
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\sections\client\view\client-view.tsx
+   5:33  warning  Expected "useEffect" to come before "useCallback"                                                           perfectionist/sort-named-imports
+  54:32  warning  React Hook useCallback received a function whose dependencies are unknown. Pass an inline function instead  react-hooks/exhaustive-deps
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\services\auth-service.ts
+  3:1  warning  All imports in the declaration are only used as types. Use `import type`  @typescript-eslint/consistent-type-imports
+
+Γ£û 38 problems (12 errors, 26 warnings)
+  12 errors and 17 warnings potentially fixable with the `--fix` option.
+

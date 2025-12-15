@@ -1,0 +1,30 @@
+﻿
+> @minimal/material-kit-react@3.0.0 lint
+> eslint "src/**/*.{js,jsx,ts,tsx}"
+
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\app.tsx
+  12:1  error  Missed spacing between "src/components/iconify" and "src/auth/context/auth-provider"  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\auth\context\auth-context.tsx
+  1:25  warning  Expected "useContext" to come before "createContext"                  perfectionist/sort-named-imports
+  3:1   error    Expected "src/types/client" (type) to come before "react" (external)  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\auth\context\auth-provider.tsx
+  5:1  error  Expected "src/types/client" (type) to come before "src/services/auth-service" (internal)  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\layouts\components\account-popover.tsx
+  19:1  error  Expected "src/_mock" (internal) to come before "src/auth/context/auth-context" (custom-auth)  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\sections\auth\sign-in-view.tsx
+  16:1  error  Expected "src/components/iconify" (custom-components) to come before "src/auth/context/auth-context" (custom-auth)  perfectionist/sort-imports
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\sections\client\view\client-view.tsx
+  54:32  warning  React Hook useCallback received a function whose dependencies are unknown. Pass an inline function instead  react-hooks/exhaustive-deps
+
+C:\Users\nisri\Downloads\material-kit-react-main\material-kit-react-main\src\services\auth-service.ts
+  3:1  error  Expected "src/types/client" (type) to come before "axios" (external)  perfectionist/sort-imports
+
+Γ£û 8 problems (6 errors, 2 warnings)
+  6 errors and 1 warning potentially fixable with the `--fix` option.
+
